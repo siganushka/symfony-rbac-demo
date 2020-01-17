@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+  {% if is_granted('app_role_new') %}
+    <a href="{{ path('app_role_new') }}" class="btn btn-success">添加</a>
+  {% else %}
+    <a href="#"  class="btn btn-success disabled">添加</a>
+  {% endif %}
+
+  {{ include('flashes.html.twig') }}
+
+  <table class="table table-bordered mt-3">
+    <tr class="bg-light">
+      <th width="10%">ID</th>
+      <th width="20%">角色名称</th>
+      <th width="25%">权限节点</th>
+      <th width="30%">创建时间</th>
+      <th width="15%">操作</th>
+    </tr>
+    {% for entity in entities %}
+    <tr>
+      <td>{{ entity.id }}</td>
+      <td>{{ entity.name }}</td>
+      <td>
+        {% for node in entity.nodes %}
+          {{ node|trans([], translation_domain) }}<br />
+        {% else %}
+          -
+        {% endfor %}
+      </td>
+      <td>{{ entity.createdAt|date('Y/m/ H:i:s') }}</td>
+      <td>
+        {% if is_granted('app_role_edit') %}
+          <a href="{{ path('app_role_edit', {id: entity.id}) }}" class="btn btn-primary btn-sm">修改</a>
+        {% else %}
+          <a href="#"  class="btn btn-primary btn-sm disabled">修改</a>
+        {% endif %}
+
+        {% if is_granted('app_role_delete') %}
+          <a href="{{ path('app_role_delete', {id: entity.id, token: csrf_token('delete')}) }}"
+            class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">删除</a>
+        {% else %}
+          <a href="#"  class="btn btn-danger btn-sm disabled">修改</a>
+        {% endif %}
+      </td>
+    </tr>
+    {% else %}
+    <tr>
+      <td colspan="5" class="text-center text-secondary">No results.</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
