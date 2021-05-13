@@ -1,0 +1,11 @@
+_submit: 提交
+_save: 保存
+_choice: '--- 请选择 ---'
+navbar.role: 角色
+navbar.user: 用户
+resource.role.name: 角色名称
+resource.role.nodes: 权限节点
+resource.user.role: 用户角色
+resource.user.username: 用户名
+resource.user.password: 密码
+resource.user.password_confirm: 确认密码

@@ -12,4 +12,5 @@ return [
     Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
     Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
     Siganushka\RBACBundle\SiganushkaRBACBundle::class => ['all' => true],
+    Siganushka\GenericBundle\SiganushkaGenericBundle::class => ['all' => true],
 ];

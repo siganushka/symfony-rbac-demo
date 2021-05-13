@@ -3,6 +3,10 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Siganushka\GenericBundle\Entity\ResourceInterface;
+use Siganushka\GenericBundle\Entity\ResourceTrait;
+use Siganushka\GenericBundle\Entity\TimestampableInterface;
+use Siganushka\GenericBundle\Entity\TimestampableTrait;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\EquatableInterface;
 use Symfony\Component\Security\Core\User\UserInterface;

@@ -3,6 +3,10 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Siganushka\GenericBundle\Entity\ResourceInterface;
+use Siganushka\GenericBundle\Entity\ResourceTrait;
+use Siganushka\GenericBundle\Entity\TimestampableInterface;
+use Siganushka\GenericBundle\Entity\TimestampableTrait;
 use Siganushka\RBACBundle\Model\RoleableInterface;
 use Siganushka\RBACBundle\Model\RoleableTrait;
 use Symfony\Component\Validator\Constraints as Assert;

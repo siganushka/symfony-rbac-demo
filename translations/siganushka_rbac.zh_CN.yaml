@@ -1,0 +1,11 @@
+app_index: /
+app_login: '/ 登录'
+app_logout: '/ 退出'
+app_role: '/ 角色'
+app_role_new: '/ 角色 / 新增'
+app_role_edit: '/ 角色 / 编辑'
+app_role_delete: '/ 角色 / 删除'
+app_user: '/ 用户'
+app_user_new: '/ 用户 / 新增'
+app_user_edit: '/ 用户 / 编辑'
+app_user_delete: '/ 用户 / 删除'

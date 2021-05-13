@@ -55,8 +55,8 @@ class UserType extends AbstractType
             'validation_groups' => function (FormInterface $form) {
                 $data = $form->getData();
                 $groups = ['role', 'username'];
-                if (null !== $data->getPlainPassword() || $data->isNew()) {
-                    array_push($groups, 'plainPassword');
+                if (null !== $data->getPlainPassword() || null === $data->getId()) {
+                    $groups[] = 'plainPassword';
                 }
 
                 return $groups;
